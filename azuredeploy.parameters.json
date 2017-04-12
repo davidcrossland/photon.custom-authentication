@@ -4,12 +4,6 @@
   "parameters": {
     "appName": {
       "value": "examplededicatedfunctionapp"
-    },
-    "repoUrl": {
-      "value": ""
-    },
-    "branch": {
-      "value": ""
     }
   }
 }
