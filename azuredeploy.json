@@ -47,10 +47,16 @@
       }
     },
     "repoUrl": {
-      "type": "string"
+      "type": "string",
+      "metadata": {
+        "description": "The github repository from which the function code will be retrieved"
+      }
     },
     "branch": {
-      "type": "string"
+      "type": "string",
+      "metadata": {
+        "description": "The github repository branch from which the function code will be retrieved"
+      }
     }
   },
   "variables": {
