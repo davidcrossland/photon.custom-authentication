@@ -48,7 +48,7 @@
     },
     "repoUrl": {
       "type": "string",
-      "defaultValue": "https://github.com/davidcrossland/photon.custom-authenticationtest.git",
+      "defaultValue": "https://github.com/davidcrossland/photon.custom-authentication.git",
       "metadata": {
         "description": "The github repository from which the function code will be retrieved"
       }
