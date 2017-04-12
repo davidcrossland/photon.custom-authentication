@@ -50,14 +50,14 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {
-        "description": "Source code repository URL"
+        "description": "The github repository from which the function code will be retrieved"
       }
     },
     "sourceCodeBranch": {
       "type": "string",
       "defaultValue": "master",
       "metadata": {
-        "description": "Source code repository branch"
+        "description": "The github repository branch from which the function code will be retrieved"
       }
     }
   },
@@ -70,7 +70,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "[variables('storageAccountName')]",
-      "apiVersion": "2015-06-15",
+      "apiVersion": "2015-08-01",
       "location": "[resourceGroup().location]",
       "properties": {
         "accountType": "[parameters('storageAccountType')]"
@@ -78,7 +78,7 @@
     },
     {
       "type": "Microsoft.Web/serverfarms",
-      "apiVersion": "2015-04-01",
+      "apiVersion": "2015-08-01",
       "name": "[variables('hostingPlanName')]",
       "location": "[resourceGroup().location]",
       "properties": {
@@ -90,7 +90,7 @@
       }
     },
     {
-      "apiVersion": "2015-04-01",
+      "apiVersion": "2015-08-01",
       "type": "Microsoft.Web/sites",
       "name": "[variables('functionAppName')]",
       "location": "[resourceGroup().location]",
@@ -108,7 +108,7 @@
       ],
       "resources": [
         {
-          "apiVersion": "2016-03-01",
+          "apiVersion": "2015-08-01",
           "name": "appsettings",
           "type": "config",
           "dependsOn": [
@@ -122,11 +122,11 @@
           }
         },
         {
-          "apiVersion": "2016-03-01",
+          "apiVersion": "2015-08-01",
           "name": "web",
           "type": "sourcecontrols",
           "dependsOn": [
-            "[resourceId('Microsoft.Web/sites/', parameters('functionAppName'))]"
+            "[resourceId('Microsoft.Web/Sites', parameters('functionAppName'))]"
           ],
           "properties": {
             "RepoUrl": "[parameters('sourceCodeRepositoryURL')]",
