@@ -92,7 +92,7 @@
     {
       "type": "Microsoft.Web/sites",
       "kind": "functionApp",
-      "name": "[parameters('WebApp_Name')]",
+      "name": "[variables('functionAppName')]",
       "apiVersion": "2015-08-01",
       "location": "[resourceGroup().location]",
       "properties": {
