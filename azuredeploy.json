@@ -121,7 +121,7 @@
           "name": "web",
           "type": "sourcecontrols",
           "dependsOn": [
-            "[resourceId('Microsoft.Web/Sites', variable('functionAppName'))]"
+            "[resourceId('Microsoft.Web/Sites', variables('functionAppName'))]"
           ],
           "properties": {
             "RepoUrl": "[parameters('sourceCodeRepositoryURL')]",
@@ -131,7 +131,7 @@
         }
       ],
       "dependsOn": [
-        "[resourceId('Microsoft.Web/serverfarms', variable('functionAppName'))]"
+        "[resourceId('Microsoft.Web/serverfarms', variables('functionAppName'))]"
       ]
     }
   ]
