@@ -83,8 +83,14 @@
       "location": "[resourceGroup().location]",
       "properties": {
       "name": "[variables('functionAppName')]",
-        "sku": "[parameters('sku')]",
-        "workerSize": "[parameters('workerSize')]",
+      "sku": {
+        "name": "S1",
+        "tier": "Standard",
+        "size": "S1",
+        "family": "S",
+        "capacity": 1
+      },
+        "workerSize": "1",
         "hostingEnvironment": "",
         "numberOfWorkers": 1
       }
