@@ -122,6 +122,19 @@
                         "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',listkeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2015-05-01-preview').key1,';')]",
                         "FUNCTIONS_EXTENSION_VERSION": "~1"
                     }
+                },
+                {
+                    "apiVersion": "2016-03-01",
+                    "name": "web",
+                    "type": "sourcecontrols",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('WebApp_Name'))]"
+                    ],
+                    "properties": {
+                        "RepoUrl": "https://github.com/PhotonEngine/photon.realtime.webhooks.serverless",
+                        "branch": "master",
+                        "IsManualIntegration": true
+                    }
                 }
             ]
         }
