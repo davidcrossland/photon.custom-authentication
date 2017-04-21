@@ -131,8 +131,8 @@
                         "[resourceId('Microsoft.Web/Sites', variables('functionAppName'))]"
                     ],
                     "properties": {
-                        "RepoUrl": "https://github.com/PhotonEngine/photon.realtime.webhooks.serverless",
-                        "branch": "master",
+                        "RepoUrl": "[parameters('sourceCodeRepositoryURL')]",
+                        "branch": "[parameters('sourceCodeBranch')]",
                         "IsManualIntegration": true
                     }
                 }
